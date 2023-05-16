@@ -28,4 +28,4 @@ $sql = "SELECT * FROM student WHERE name LIKE ? OR id LIKE ?";
 $stmt = $pdo->prepare($sql);
 
 // Execute SQL statement with search query parameter
-$stmt->execute(["$search%", "$search"]);
+$stmt->execute(["%$search%", "$search"]);
