@@ -4,32 +4,46 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitfe55cd1e96295ec74ebacfb5180eacd9
+class ComposerStaticInit5f620ccc04b31257c32227cd2d495aae
 {
     public static $prefixLengthsPsr4 = array (
-        'B' => 
+        'P' => 
         array (
-            'Bluerhinos\\' => 11,
+            'Psr\\Log\\' => 8,
+            'PhpMqtt\\Client\\' => 15,
+        ),
+        'M' => 
+        array (
+            'MyCLabs\\Enum\\' => 13,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Bluerhinos\\' => 
+        'Psr\\Log\\' => 
         array (
-            0 => __DIR__ . '/..' . '/bluerhinos/phpmqtt',
+            0 => __DIR__ . '/..' . '/psr/log/src',
+        ),
+        'PhpMqtt\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-mqtt/client/src',
+        ),
+        'MyCLabs\\Enum\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/myclabs/php-enum/src',
         ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Stringable' => __DIR__ . '/..' . '/myclabs/php-enum/stubs/Stringable.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitfe55cd1e96295ec74ebacfb5180eacd9::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitfe55cd1e96295ec74ebacfb5180eacd9::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitfe55cd1e96295ec74ebacfb5180eacd9::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5f620ccc04b31257c32227cd2d495aae::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5f620ccc04b31257c32227cd2d495aae::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit5f620ccc04b31257c32227cd2d495aae::$classMap;
 
         }, null, ClassLoader::class);
     }

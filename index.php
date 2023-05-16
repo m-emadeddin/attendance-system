@@ -28,6 +28,14 @@
 
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
+
+    <script>
+        function handleImageError(image) {
+            image.onerror = null;
+            image.src = 'https://img.freepik.com/free-icon/user_318-804790.jpg'; // Path to your default image
+            image.alt = 'Default Image'; // Alt text for the default image
+        }
+    </script>
 </head>
 <body>
     
@@ -159,7 +167,7 @@
                                                         echo "<td class=\"serial\">".($i)."</td>";
                                                         echo "<td class=\"avatar\">";
                                                             echo "<div class=\"round-img\">";
-                                                                echo '<a href="#"><img class="rounded-circle" src="images/avatar/'.$std['avatar'].'" alt=""></a>';
+                                                                echo '<a href="#"><img id="userImage" class="rounded-circle" src="images/avatar/'.$std['avatar'].'" alt="" onerror="handleImageError(this);"></a>';
                                                             echo '</div>';
                                                         echo '</td>';
                                                         echo '<td>'. $std['id'] .'</td>';
@@ -473,5 +481,6 @@
             // Bar Chart #flotBarChart End
         });
     </script>
+
 </body>
 </html>
