@@ -1,6 +1,6 @@
 <?php
     include "db/fetch_std.php";
-    $total_lectures = 500;
+    $total_lectures = 750;
 ?>
 <!doctype html>
 <html class="no-js" lang="">
