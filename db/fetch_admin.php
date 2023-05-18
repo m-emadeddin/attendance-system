@@ -26,7 +26,7 @@
                     exit;
                 } else {
                     // Redirect to a regular user page or perform regular user actions
-                    echo 'Welcome, user!';
+                    header("Location: ../std.php");
                 }
             } else {
                 // Redirect to an error page or display an error message
@@ -35,7 +35,5 @@
                 $_SESSION['status'] = "Try again.";
                 header("Location: ../login.php");
             }
-        }
-        
+        } 
         ?>
-

@@ -51,11 +51,14 @@ $total_lectures = 750;
                     <li class="active">
                         <a href="std.php"><i class="menu-icon fa fa-laptop"></i>Profile </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="schedule.php"><i class="menu-icon fa fa-laptop"></i>Schedule </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="Std_Atdd.php"><i class="menu-icon fa fa-laptop"></i>Attendance </a>
+                    </li>
+                    <li>
+                        <a href="login.php"><i class="menu-icon ti-user"></i>log out </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
