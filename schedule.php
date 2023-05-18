@@ -45,14 +45,17 @@ $total_lectures = 750;
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active">
+                    <li>
                         <a href="std.php"><i class="menu-icon fa fa-laptop"></i>Profile </a>
                     </li>
                     <li class="active">
                         <a href="schedule.php"><i class="menu-icon fa fa-laptop"></i>Schedule </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="Std_Atdd.php"><i class="menu-icon fa fa-laptop"></i>Attendance </a>
+                    </li>
+                    <li>
+                        <a href="login.php"><i class="menu-icon fa fa-user"></i>Log out </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
