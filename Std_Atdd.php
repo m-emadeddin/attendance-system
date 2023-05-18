@@ -408,7 +408,5 @@ $total_lectures = 750;
             // Bar Chart #flotBarChart End
         });
     </script>
-
 </body>
-
 </html>
