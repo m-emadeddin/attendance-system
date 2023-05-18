@@ -37,7 +37,7 @@
     <div id="right-panel" class="right-panel">
         <!-- Header-->
         <?php include "header.php";
-            include "nav.php";  
+            include "nav_search.php";  
             ?>
         
         <!-- /#header -->
@@ -118,10 +118,12 @@
         <!-- /.content -->
         <br><br><br><br><br>
         <center>
-            <form action="search.php" method="get">
-                <label for="search">Search by name or ID:</label>
-                <input type="text" id="search" name="search" required>
-                <button type="submit">Search</button>
+            <h3>Click here to start searching!</h3>
+            <form action="search.php" class="search-bar">
+                <input type="search" name="search" pattern=".*\S.*" required>
+                <button class="search-btn" type="submit">
+                <span>Search</span>
+                </button>
             </form>
             <?php
                 if(isset($_GET['search'])){
