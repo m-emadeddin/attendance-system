@@ -6,14 +6,16 @@ $d = date("Y-m-d");
 $t = date("H:i:sa");
 
 if (!isset($_GET['cardID'])) {
-    echo "Invalid request.";        
+    echo 'Invalid Response';
 }
 else{
     $cardID = $_GET['cardID'];
-    $dataQuery = $conn->query("SELECT * FROM student WHERE ID=$cardID;");
-    $dataQuery->setFetchMode(PDO::FETCH_ASSOC);
+    $dataQuery = $conn->prepare("SELECT * FROM student WHERE id = :cardID");
+    $dataQuery->bindParam(':cardID', $cardID);
+    $dataQuery->execute();
+    
+    // Fetch the data
     $dataQuery = $dataQuery->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($dataQuery);
 
 
     if (!sizeof($dataQuery)) {
@@ -24,8 +26,13 @@ else{
         $stdScore = $dataQuery[0]['score'];
         $stdScore++;
         var_dump($stdScore);
-        $updateQuery = $conn->query("UPDATE `student` SET `score`='$stdScore' WHERE id = $cardID");
+        $updateQuery = $conn->prepare("UPDATE `student` SET `score`='$stdScore' WHERE id = :cardID");
+        $updateQuery->bindParam(':cardID', $cardID);
+        $updateQuery->execute();
+
         echo "data updated";
     }  
 }
+
+sleep(2);
 ?>
