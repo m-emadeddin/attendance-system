@@ -14,7 +14,7 @@ else{
     $dataQuery->bindParam(':cardID', $cardID);
     $dataQuery->execute();
     
-    // Fetch the data
+    // Fetch the data from db
     $dataQuery = $dataQuery->fetchAll(PDO::FETCH_ASSOC);
 
 
