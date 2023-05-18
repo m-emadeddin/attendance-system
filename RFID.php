@@ -28,4 +28,6 @@ else{
         echo "data updated";
     }  
 }
+
+sleep(2);
 ?>
