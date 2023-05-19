@@ -10,7 +10,7 @@
                         <a href="search.php"> <i class="menu-icon ti-search"></i>Search</a>
                     </li>
                     <li>
-                        <a href="logout.php"> <i class="menu-icon ti-user"></i>Log out</a>
+                        <a href="../logout.php"> <i class="menu-icon ti-user"></i>Log out</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
