@@ -1,6 +1,6 @@
 <?php
 if($_SESSION['admin'] != 1){
-    header("Location: " . $_SERVER['HTTP_REFERER']);
+    header("Location: ../std");
     exit();
 }
 
