@@ -27,7 +27,7 @@
                 exit;
             } else {$_SESSION['admin'] = 0;
                 // Redirect to a regular user page or perform regular user actions
-                header("Location: ../std/std.php");
+                header("Location: ../std/index.php");
             }
         } else {
             // Redirect to an error page or display an error message
