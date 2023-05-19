@@ -19,12 +19,13 @@
             $query1 = $stmt->fetch(PDO::FETCH_ASSOC);
             // Example: Checking if username and password match a specific condition
             if ($username === $query1['username'] && $password === $query1['password']) {
-                
+                $_SESSION["username"] = $username;
                 if ($query1['is_admin'] == 1) {
+                    $_SESSION['admin'] = 1;
                     // Redirect to admin page or perform admin-related actions
                     header("Location: ../index.php");
                     exit;
-                } else {
+                } else {$_SESSION['admin'] = 0;
                     // Redirect to a regular user page or perform regular user actions
                     header("Location: ../std.php");
                 }

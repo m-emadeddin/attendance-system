@@ -1,3 +1,16 @@
+<?php
+  @session_start();
+  if(isset($_SESSION['admin'])){
+    if($_SESSION['admin'] == 1){
+      header("Location: index.php");
+      exit();
+    }
+    else{
+      header("Location: std.php");
+      exit();
+    }
+  }
+?>
 <!DOCTYPE html>
 <!-- Coding By Attendance Seekers. -->
 <html lang="en" dir="ltr">
@@ -11,7 +24,6 @@
   <body style="background: #C0C0C0;">
   
     <?php 
-      session_start();
       
       if(isset($_SESSION['status']))
       {
