@@ -24,9 +24,7 @@
   <body style="background: #C0C0C0;">
   
     <?php 
-      
-      if(isset($_SESSION['status']))
-      {
+      if(isset($_SESSION['status'])){
           ?>
               <div class="alert alert-warning alert-dismissible fade show" role="alert">
                   <strong>Invalid username or password!</strong> <?= $_SESSION['status']; ?>
