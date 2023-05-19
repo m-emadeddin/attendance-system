@@ -1,4 +1,5 @@
 <?php
+require_once 'auth.php';
 include "db/fetch_std.php";
 $total_lectures = 750;
 ?>

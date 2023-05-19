@@ -1,4 +1,5 @@
 <?php
+require_once 'auth.php';
 include "db/fetch_std.php";
 $total_lectures = 750;
 ?>
@@ -55,7 +56,7 @@ $total_lectures = 750;
                         <a href="Std_Atdd.php"><i class="menu-icon fa fa-laptop"></i>Attendance </a>
                     </li>
                     <li>
-                        <a href="login.php"><i class="menu-icon fa fa-user"></i>Log out </a>
+                        <a href="logout.php"><i class="menu-icon fa fa-user"></i>Log out </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
