@@ -23,11 +23,11 @@
             if ($query1['is_admin'] == 1) {
                 $_SESSION['admin'] = 1;
                 // Redirect to admin page or perform admin-related actions
-                header("Location: ../index.php");
+                header("Location: ../admin/index.php");
                 exit;
             } else {$_SESSION['admin'] = 0;
                 // Redirect to a regular user page or perform regular user actions
-                header("Location: ../std.php");
+                header("Location: ../std/std.php");
             }
         } else {
             // Redirect to an error page or display an error message
