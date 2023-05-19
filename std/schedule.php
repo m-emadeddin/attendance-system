@@ -47,7 +47,7 @@ $total_lectures = 750;
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="std.php"><i class="menu-icon fa fa-laptop"></i>Profile </a>
+                        <a href="index.php"><i class="menu-icon fa fa-laptop"></i>Profile </a>
                     </li>
                     <li class="active">
                         <a href="schedule.php"><i class="menu-icon fa fa-laptop"></i>Schedule </a>
