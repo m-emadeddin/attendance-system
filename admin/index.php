@@ -195,6 +195,12 @@
                             </div> <!-- /.card -->
                         </div>  <!-- /.col-lg-8 -->
 
+                        <form action="Export.php">
+                            <label for="Fingerprint"><b>Export to Excel:</b></label>
+                            <input type="submit" name="To_Excel" value="Export" onclick="To_Excel()">
+                        </form>
+                        <?php
+                        ?>
                         <!-- /.col-md-4 -->
                     </div>
                 </div>
@@ -206,7 +212,7 @@
                 
                 <!-- /Calender Chart Weather -->
                 <!-- Modal - Calendar - Add New Event -->
-               
+            
                 <!-- /#event-modal -->
                 <!-- Modal - Calendar - Add Category -->
                 <div class="modal fade none-border" id="add-category">
