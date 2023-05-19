@@ -28,6 +28,7 @@
             } else {$_SESSION['admin'] = 0;
                 // Redirect to a regular user page or perform regular user actions
                 header("Location: ../std/index.php");
+                exit;
             }
         } else {
             // Redirect to an error page or display an error message
@@ -35,6 +36,7 @@
             //after insert or update 
             $_SESSION['status'] = "Try again.";
             header("Location: ../login.php");
+            exit;
         }
     } 
 ?>
