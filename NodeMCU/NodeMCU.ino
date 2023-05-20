@@ -3,10 +3,10 @@
 #include <SPI.h>
 #include <MFRC522.h>
 
-const char *ssid = "SSID_NAME";
-const char *password = "********";
+const char *ssid = "TP-Link_4912";
+const char *password = "MD@1862001!";
 
-const char *serverAddress = "IP_ADDRESS";
+const char *serverAddress = "192.168.1.4";
 const int serverPort = 80;
 
 #define SS_PIN D4
@@ -98,7 +98,9 @@ void loop()
                     hexUID += String(rfid.uid.uidByte[i] < 0x10 ? "0" : "");
                     hexUID += String(rfid.uid.uidByte[i], HEX);
                 }
-
+                if(hexUID[0] == '5') hexUID = "std_1";
+                else if(hexUID[0] == '9') hexUID = "std_2";
+                else if(hexUID[0] == 'a') hexUID = "std_3";
                 Serial.println(hexUID);
 
                 // Send the data to the server using HTTP GET request
