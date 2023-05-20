@@ -1,5 +1,18 @@
+<?php
+  @session_start();
+  if(isset($_SESSION['admin'])){
+    if($_SESSION['admin'] == 1){
+      header("Location: admin/index.php");
+      exit();
+    }
+    else{
+      header("Location: std/std.php");
+      exit();
+    }
+  }
+?>
 <!DOCTYPE html>
-<!-- Coding By Attendance Seekers. -->
+<!-- Coding By Attendance Seekers -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -11,10 +24,7 @@
   <body style="background: #C0C0C0;">
   
     <?php 
-      session_start();
-      
-      if(isset($_SESSION['status']))
-      {
+      if(isset($_SESSION['status'])){
           ?>
               <div class="alert alert-warning alert-dismissible fade show" role="alert">
                   <strong>Invalid username or password!</strong> <?= $_SESSION['status']; ?>

@@ -14,13 +14,15 @@ else{
     $dataQuery->bindParam(':cardID', $cardID);
     $dataQuery->execute();
     
-    // Fetch the data
+    // Fetch the data from db
     $dataQuery = $dataQuery->fetchAll(PDO::FETCH_ASSOC);
 
 
     if (!sizeof($dataQuery)) {
-        echo "SQL_Error_Select_device";
-        exit();
+        $dumpuser = "user".(int)rand(1,100);
+        $dataQuery = $conn->prepare("INSERT INTO `student`(`id`, `name`, `score`, `avatar`) VALUES (:cardID,'$dumpuser',1,'any.jpg')");
+        $dataQuery->bindParam(':cardID', $cardID);
+        $dataQuery->execute();
     }
     else{
         $stdScore = $dataQuery[0]['score'];
@@ -34,5 +36,5 @@ else{
     }  
 }
 
-sleep(2);
+sleep(1);
 ?>

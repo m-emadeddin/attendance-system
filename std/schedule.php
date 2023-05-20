@@ -1,14 +1,14 @@
 <?php
-include "db/fetch_std.php";
+require_once '../auth/auth.php';
+include "../db/fetch_std.php";
 $total_lectures = 750;
 ?>
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Attendance Smart System</title>
+    <title>Schedule</title>
     <meta name="description" content="Attendance Smart System">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,16 +22,14 @@ $total_lectures = 750;
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/style.css.map">
-
+    <link rel="stylesheet" href="../assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css.map">
+    <link rel="stylesheet" href="../assets/css/Schedule.css">
     <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
-
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
-
     <script>
         function handleImageError(image) {
             image.onerror = null;
@@ -48,17 +46,17 @@ $total_lectures = 750;
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="std.php"><i class="menu-icon fa fa-laptop"></i>Profile </a>
+                <li>
+                        <a href="index.php"><i class="menu-icon fa fa-user-circle"></i>Profile </a>
+                    </li>
+                    <li  class="active">
+                        <a href="schedule.php"><i class="menu-icon fa fa-table"></i>Schedule </a>
                     </li>
                     <li>
-                        <a href="schedule.php"><i class="menu-icon fa fa-laptop"></i>Schedule </a>
+                        <a href="Std_Atdd.php"><i class="menu-icon fa fa-list-ul"></i>Attendance </a>
                     </li>
                     <li>
-                        <a href="Std_Atdd.php"><i class="menu-icon fa fa-laptop"></i>Attendance </a>
-                    </li>
-                    <li>
-                        <a href="login.php"><i class="menu-icon ti-user"></i>log out </a>
+                        <a href="../logout.php"><i class="menu-icon fa fa-sign-out"></i>Log out </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -68,128 +66,167 @@ $total_lectures = 750;
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->
-        <?php include "header.php" ?>
+        <?php include "../part/header.php" ?>
         <!-- /#header -->
 
         <!-- Content -->
         <div class="content">
-            <!-- Animated -->
-            <div class="animated fadeIn">
-                <!-- Widgets  -->
-                <div class="clearfix"></div>
-                <!-- Orders -->
-                <div class="orders">
-                    <div class="row">
-                        <div class="container col-lg-12 row gutters-sm">
-                            <div class="col-lg-4 col-md-4 mb-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex flex-column align-items-center text-center">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Admin"
-                                                class="rounded-circle" width="150">
-                                            <div class="mt-3">
-                                                <h4>Kamilia Ahmed</h4>
-                                                <p class="text-secondary mb-1">3<sup>rd</sup> Year CSE</p>
+            <!-- Widgets  -->
+            <div class="clearfix"></div>
+            <!-- Orders -->
+            <div class="container justify-content-center">
+                <div class="row ">
+                    <div class=" col-lg-12">
+                        <div class="schedule-table table-responsive ">
+                            <table class="table-responsive col-lg-12 bg-white justify-content-center" style="padding:0">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>08 am</th>
+                                        <th>10 am</th>
+                                        <th>12 pm</th>
+                                        <th>02 pm</th>
+                                        <th class="last">04 pm</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="day">Saturday</td>
+                                        <td class="active" colspan="2">
+                                            <h4>Communications</h4>
+                                            <p>8:30 am - 11:40 am</p>
+                                            <div class="hover">
+                                                <h4>Communications</h4>
+                                                <p>28202</p>
+                                                <span>Dr.Nabila</span>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mt-3">
-                                    <ul class="list-group list-group-flush">
-                                        <li
-                                            class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                            <h6 class="mb-0">ID</h6>
-                                            <span class="text-secondary">20812019201425</span>
-                                        </li>
-                                        <li
-                                            class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                            <h6 class="mb-0">National ID</h6>
-                                            <span class="text-secondary">31249531793</span>
-                                        </li>
-                                        <li
-                                            class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                            <h6 class="mb-0">Department</h6>
-                                            <span class="text-secondary">Computer Science</span>
-                                        </li>
-                                        <li
-                                            class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                            <h6 class="mb-0">Year</h6>
-                                            <span class="text-secondary">Third</span>
-                                        </li>
-                                        <li
-                                            class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                            <h6 class="mb-0">Semester </h6>
-                                            <span class="text-secondary">Second</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">Full Name</h6>
+                                        </td>
+                                        <td class="active" colspan="2">
+                                            <h4>Operating System</h4>
+                                            <p>12:30 pm - 03 pm</p>
+                                            <div class="hover">
+                                                <h4>Operating System</h4>
+                                                <p>27321</p>
+                                                <span>Dr.Ahmed Amer</span>
                                             </div>
-                                            <div class="col-sm-9 text-secondary">Kamila Ahmed Hamed Mohamed
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="day">Sunday</td>
+                                        <td class="active">
+                                            <h4>Measurment</h4>
+                                            <p> 10 am - 11 am</p>
+                                            <div class="hover">
+                                                <h4>Measurment</h4>
+                                                <p>27321</p>
+                                                <span>Dr.Howida</span>
                                             </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">Email</h6>
+                                        </td>
+                                        <td class="active">
+                                            <h4>Computer Organizaion</h4>
+                                            <p>10 am - 11:40 am</p>
+                                            <div class="hover">
+                                                <h4>Computer Organizaion</h4>
+                                                <p>27321</p>
+                                                <span>Dr.Tamer</span>
                                             </div>
-                                            <div class="col-sm-9 text-secondary">kamiliaahmed01@gmail.com </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">Mobile</h6>
+                                        </td>
+                                        <td class="active" colspan="2">
+                                            <h4>Integrated Circuits</h4>
+                                            <p>12:30 pm - 03 pm</p>
+                                            <div class="hover">
+                                                <h4>Integrated Circuits</h4>
+                                                <p>28202</p>
+                                                <span>dr.Nisreen</span>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> 01124529888 </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">Address</h6>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="day">Monday</td>
+                                        <td></td>
+                                        <td class="active">
+                                            <h4>Cycling</h4>
+                                            <p>11 am - 12 pm</p>
+                                            <div class="hover">
+                                                <h4>Cycling</h4>
+                                                <p>11 am - 12 pm</p>
+                                                <span>Tabitha Potter</span>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> Diarb-Negm, ElSharqia, Egypt
+                                        </td>
+                                        <td class="active">
+                                            <h4>Karate</h4>
+                                            <p>03 pm - 05 pm</p>
+                                            <div class="hover">
+                                                <h4>Karate</h4>
+                                                <p>03 pm - 05 pm</p>
+                                                <span>Lester Gray</span>
                                             </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">Birthday Date</h6>
+                                        </td>
+                                        <td></td>
+                                        <td class="active">
+                                            <h4>Crossfit</h4>
+                                            <p>07 pm - 08 pm</p>
+                                            <div class="hover">
+                                                <h4>Crossfit</h4>
+                                                <p>07 pm - 08 pm</p>
+                                                <span>Candi Yip</span>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> 18 June 2001
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="day">Tuesday</td>
+                                        <td class="active">
+                                            <h4>Spinning</h4>
+                                            <p>10 am - 11 am</p>
+                                            <div class="hover">
+                                                <h4>Spinning</h4>
+                                                <p>10 am - 11 am</p>
+                                                <span>Mary Cass</span>
                                             </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">Nationality</h6>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="active">
+                                            <h4>Bootcamp</h4>
+                                            <p>05 pm - 06 pm</p>
+                                            <div class="hover">
+                                                <h4>Bootcamp</h4>
+                                                <p>05 pm - 06 pm</p>
+                                                <span>Brenda Mastropietro</span>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> Egyptian
+                                        </td>
+                                        <td class="active">
+                                            <h4>Boxercise</h4>
+                                            <p>07 pm - 08 pm</p>
+                                            <div class="hover">
+                                                <h4>Boxercise</h4>
+                                                <p>07 pm - 08 pm</p>
+                                                <span>Marlene Bruce</span>
                                             </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">Microsoft Account</h6>
-                                            </div>
-                                            <div class="col-sm-9 text-secondary"> 20812019201425@eng.zu.edu.eg
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="day">Wednesday</td>
+                                        <td colspan="5">
+                                            <h1>OFF</h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="day">Thursday</td>
+                                        <td colspan="5">
+                                            <h1>OFF</h4>
+                                        </td>
+                                    </tr>
 
-                        <!-- /.col-md-4 -->
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- .animated -->
         </div>
         <!-- /.content -->
         <div class="clearfix"></div>
@@ -208,6 +245,7 @@ $total_lectures = 750;
         </footer>
         <!-- /.site-footer -->
     </div>
+
     <!-- /#right-panel -->
 
     <!-- Scripts -->
@@ -215,7 +253,7 @@ $total_lectures = 750;
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 
     <!--  Chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
@@ -229,11 +267,11 @@ $total_lectures = 750;
     <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/simpleweather@3.1.0/jquery.simpleWeather.min.js"></script>
-    <script src="assets/js/init/weather-init.js"></script>
+    <script src="../assets/js/init/weather-init.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
-    <script src="assets/js/init/fullcalendar-init.js"></script>
+    <script src="../assets/js/init/fullcalendar-init.js"></script>
 
     <!--Local Stuff-->
     <script>
@@ -427,7 +465,6 @@ $total_lectures = 750;
             // Bar Chart #flotBarChart End
         });
     </script>
-
 </body>
 
 </html>

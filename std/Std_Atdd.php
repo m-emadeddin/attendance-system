@@ -1,5 +1,10 @@
 <?php
-include "db/fetch_std.php";
+require_once "../db/connect.php";
+require_once '../auth/auth.php';
+$att =  $conn->prepare('SELECT score FROM student WHERE id = :id;');
+$att->bindParam(':id', $_SESSION['id']);
+$att->execute();
+$att = $att->fetch(PDO::FETCH_ASSOC);
 $total_lectures = 750;
 ?>
 <!doctype html>
@@ -22,9 +27,9 @@ $total_lectures = 750;
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/style.css.map">
+    <link rel="stylesheet" href="../assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css.map">
 
     <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
@@ -49,16 +54,16 @@ $total_lectures = 750;
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                 <li>
-                        <a href="std.php"><i class="menu-icon fa fa-laptop"></i>Profile </a>
+                        <a href="index.php"><i class="menu-icon fa fa-user-circle"></i>Profile </a>
                     </li>
                     <li>
-                        <a href="schedule.php"><i class="menu-icon fa fa-laptop"></i>Schedule </a>
+                        <a href="schedule.php"><i class="menu-icon fa fa-table"></i>Schedule </a>
                     </li>
-                    <li class="active">
-                        <a href="Std_Atdd.php"><i class="menu-icon fa fa-laptop"></i>Attendance </a>
+                    <li   class="active">
+                        <a href="Std_Atdd.php"><i class="menu-icon fa fa-list-ul"></i>Attendance </a>
                     </li>
                     <li>
-                        <a href="login.php"><i class="menu-icon ti-user"></i>log out </a>
+                        <a href="../logout.php"><i class="menu-icon fa fa-sign-out"></i>Log out </a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -68,7 +73,7 @@ $total_lectures = 750;
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->
-        <?php include "header.php" ?>
+        <?php include "../part/header.php" ?>
         <!-- /#header -->
 
         <!-- Content -->
@@ -156,7 +161,7 @@ $total_lectures = 750;
                                         <li
                                             class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                             <h6 class="mb-0">Total Lectures Attended</h6>
-                                            <span class="text-secondary">10</span>
+                                            <span class="text-secondary"><?=$att['score']?></span>
                                         </li>
                                         <li
                                             class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
@@ -199,7 +204,7 @@ $total_lectures = 750;
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 
     <!--  Chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
@@ -213,11 +218,11 @@ $total_lectures = 750;
     <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/simpleweather@3.1.0/jquery.simpleWeather.min.js"></script>
-    <script src="assets/js/init/weather-init.js"></script>
+    <script src="../assets/js/init/weather-init.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
-    <script src="assets/js/init/fullcalendar-init.js"></script>
+    <script src="../assets/js/init/fullcalendar-init.js"></script>
 
     <!--Local Stuff-->
     <script>
@@ -411,7 +416,5 @@ $total_lectures = 750;
             // Bar Chart #flotBarChart End
         });
     </script>
-
 </body>
-
 </html>
