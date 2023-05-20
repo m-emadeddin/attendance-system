@@ -201,7 +201,27 @@ $total_lectures = 750;
                                     <button type="button" class="btn btn-outline-primary ms-auto"
                                         onclick="To_Excel()">Export</button>
                                 </form>
+                        </div>  <!-- /.col-lg-8 -->
+                        <!-- /.col-md-4 -->
+                    </div>
+                </div>
+                <!-- /.orders -->
+                <!-- To Do and Live Chat -->
 
+                <!-- /To Do and Live Chat -->
+                <!-- Calender Chart Weather  -->
+                
+                <!-- /Calender Chart Weather -->
+                <!-- Modal - Calendar - Add New Event -->
+            
+                <!-- /#event-modal -->
+                <!-- Modal - Calendar - Add Category -->
+                <div class="modal fade none-border" id="add-category">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title"><strong>Add a category </strong></h4>
                             </div>
                         </div>
                     </div> <!-- /.col-lg-8 -->

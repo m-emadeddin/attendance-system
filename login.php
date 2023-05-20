@@ -12,7 +12,7 @@
   }
 ?>
 <!DOCTYPE html>
-<!-- Coding By Attendance Seekers. -->
+<!-- Coding By Attendance Seekers -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
