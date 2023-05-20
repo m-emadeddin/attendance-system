@@ -25,7 +25,9 @@
                 // Redirect to admin page or perform admin-related actions
                 header("Location: ../admin/index.php");
                 exit;
-            } else {$_SESSION['admin'] = 0;
+            } else {
+                $_SESSION['admin'] = 0;
+                $_SESSION['id'] = $username;
                 // Redirect to a regular user page or perform regular user actions
                 header("Location: ../std/index.php");
                 exit;

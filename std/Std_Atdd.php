@@ -1,6 +1,10 @@
 <?php
+require_once "../db/connect.php";
 require_once '../auth/auth.php';
-include "../db/fetch_std.php";
+$att =  $conn->prepare('SELECT score FROM student WHERE id = :id;');
+$att->bindParam(':id', $_SESSION['id']);
+$att->execute();
+$att = $att->fetch(PDO::FETCH_ASSOC);
 $total_lectures = 750;
 ?>
 <!doctype html>
@@ -157,7 +161,7 @@ $total_lectures = 750;
                                         <li
                                             class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                             <h6 class="mb-0">Total Lectures Attended</h6>
-                                            <span class="text-secondary">10</span>
+                                            <span class="text-secondary"><?=$att['score']?></span>
                                         </li>
                                         <li
                                             class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
