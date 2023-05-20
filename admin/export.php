@@ -10,7 +10,7 @@ $rows = $query->fetchAll();
 $file = fopen('export.csv', 'w');
 
 // Write the CSV headers
-$headers = ['ID', 'Name', 'Avatar', 'Attendance No.'];
+$headers = ['ID', 'Name',  'Attendance No.', 'Avatar'];
 fputcsv($file, $headers);
 
 // Write the data rows
