@@ -197,11 +197,12 @@ $total_lectures = 750;
                                 </div>
                             </div> <!-- /.card -->
                             <div class=" d-flex justify-content-end bg-transparent border-white">
-                                <form action="export.php">
-                                    <button type="button" class="btn btn-outline-primary ms-auto"
+                            <form action="export.php">
+                                    <button type="submit" class="btn btn-outline-primary ms-auto"
                                         onclick="To_Excel()">Export</button>
-                                </form>
-                        </div>  <!-- /.col-lg-8 -->
+                            </form>
+
+                            </div>  <!-- /.col-lg-8 -->
                         <!-- /.col-md-4 -->
                     </div>
                 </div>
