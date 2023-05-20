@@ -1,6 +1,6 @@
 <?php
 require_once '../auth/auth.php';
-include "../db/fetch_std.php";
+include "../db/fetch_user.php";
 $total_lectures = 750;
 ?>
 <!doctype html>
@@ -86,11 +86,11 @@ $total_lectures = 750;
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="d-flex flex-column align-items-center text-center">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Admin"
+                                            <img src="../images/avatar/<?=$personal['pic'] ?>" alt="Admin" onerror=handleImageError(this)
                                                 class="rounded-circle" width="150">
                                             <div class="mt-3">
-                                                <h4>Kamilia Ahmed</h4>
-                                                <p class="text-secondary mb-1">3<sup>rd</sup> Year CSE</p>
+                                                <h4><?=$personal['name']?></h4>
+                                                <p class="text-secondary mb-1"><?=$dept['year']." Year ".$dept['dept'] ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -100,27 +100,27 @@ $total_lectures = 750;
                                         <li
                                             class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                             <h6 class="mb-0">ID</h6>
-                                            <span class="text-secondary">20812019201425</span>
+                                            <span class="text-secondary"><?=$dept['id']?></span>
                                         </li>
                                         <li
                                             class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                             <h6 class="mb-0">National ID</h6>
-                                            <span class="text-secondary">31249531793</span>
+                                            <span class="text-secondary"><?=$dept['nid']?></span>
                                         </li>
                                         <li
                                             class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                             <h6 class="mb-0">Department</h6>
-                                            <span class="text-secondary">Computer Science</span>
+                                            <span class="text-secondary"><?=$dept['dept']?></span>
                                         </li>
                                         <li
                                             class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                             <h6 class="mb-0">Year</h6>
-                                            <span class="text-secondary">Third</span>
+                                            <span class="text-secondary"><?=$dept['year']?></span>
                                         </li>
                                         <li
                                             class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                             <h6 class="mb-0">Semester </h6>
-                                            <span class="text-secondary">Second</span>
+                                            <span class="text-secondary"><?=$dept['sem']?></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -132,7 +132,7 @@ $total_lectures = 750;
                                             <div class="col-sm-3">
                                                 <h6 class="mb-0">Full Name</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary">Kamila Ahmed Hamed Mohamed
+                                            <div class="col-sm-9 text-secondary"><?=$personal['name']?>
                                             </div>
                                         </div>
                                         <hr>
@@ -140,21 +140,21 @@ $total_lectures = 750;
                                             <div class="col-sm-3">
                                                 <h6 class="mb-0">Email</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary">kamiliaahmed01@gmail.com </div>
+                                            <div class="col-sm-9 text-secondary"><?=$personal['email']?> </div>
                                         </div>
                                         <hr>
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <h6 class="mb-0">Mobile</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> 01124529888 </div>
+                                            <div class="col-sm-9 text-secondary"> <?=$personal['phone']?> </div>
                                         </div>
                                         <hr>
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <h6 class="mb-0">Address</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> Diarb-Negm, ElSharqia, Egypt
+                                            <div class="col-sm-9 text-secondary"> <?=$personal['address']?>
                                             </div>
                                         </div>
                                         <hr>
@@ -162,7 +162,7 @@ $total_lectures = 750;
                                             <div class="col-sm-3">
                                                 <h6 class="mb-0">Birthday Date</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> 18 June 2001
+                                            <div class="col-sm-9 text-secondary"><?=$personal['birthday']?>
                                             </div>
                                         </div>
                                         <hr>
@@ -170,7 +170,7 @@ $total_lectures = 750;
                                             <div class="col-sm-3">
                                                 <h6 class="mb-0">Nationality</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> Egyptian
+                                            <div class="col-sm-9 text-secondary"> <?=$personal['national']?>
                                             </div>
                                         </div>
                                         <hr>
@@ -178,7 +178,7 @@ $total_lectures = 750;
                                             <div class="col-sm-3">
                                                 <h6 class="mb-0">Microsoft Account</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary"> 20812019201425@eng.zu.edu.eg
+                                            <div class="col-sm-9 text-secondary"> <?=$personal['account']?>
                                             </div>
                                         </div>
                                     </div>

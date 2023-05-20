@@ -203,6 +203,7 @@ $total_lectures = 750;
                             </form>
 
                             </div>  <!-- /.col-lg-8 -->
+
                         <!-- /.col-md-4 -->
                     </div>
                 </div>
