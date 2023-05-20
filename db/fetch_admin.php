@@ -9,7 +9,7 @@
     
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $username = $_POST["username"];
-        $password = $_POST["password"];
+        $password = sha1($_POST["password"]);
         
         // Use the username and password values as needed in your PHP logic
         // For example, you can perform database operations or validate the credentials
