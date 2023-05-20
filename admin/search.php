@@ -2,6 +2,7 @@
     require_once '../auth/auth.php';
     require_once '../auth/adminAuth.php';
     include "../db/fetch_std.php";
+    $total_lectures = 100;
 ?>
 
 <!doctype html>
@@ -33,7 +34,6 @@
 
 
 </head>
-<?php $total_lectures = 100;?>
 <body>
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
