@@ -60,6 +60,7 @@ $total_lectures = 750;
                     </li>
                     <li>
                         <a href="../logout.php"><i class="menu-icon fa fa-sign-out"></i>Log out </a>
+
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

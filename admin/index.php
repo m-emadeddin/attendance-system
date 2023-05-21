@@ -198,8 +198,7 @@ $total_lectures = 750;
                             </div> <!-- /.card -->
                             <div class=" d-flex justify-content-end bg-transparent border-white">
                             <form action="export.php">
-                                    <button type="submit" id="export_button" class="btn btn-outline-primary ms-auto"
-                                        onclick="To_Excel()">Export</button>
+                                    <button type="submit" id="export_button" class="btn btn-outline-primary ms-auto">Export</button>
                             </form>
 
                             </div>  <!-- /.col-lg-8 -->
@@ -301,7 +300,6 @@ $total_lectures = 750;
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    
     <!--  Chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
 
@@ -512,6 +510,7 @@ $total_lectures = 750;
             // Bar Chart #flotBarChart End
         });
     </script>
+
     
     <!--export button message-->
     <script>
