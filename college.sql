@@ -113,6 +113,7 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`id`, `name`, `score`, `avatar`) VALUES
+
 ('1', 'Muhammed Emadeddin', 64, 'admin.jpg'),
 ('2', 'user', 7, 'any.jpg'),
 ('53f30211', 'CARD3', 1, 'CARD3.JPG'),
