@@ -233,7 +233,6 @@ $total_lectures = 750;
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="../assets/js/main.js"></script>
 
-
 </body>
 
 </html>
