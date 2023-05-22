@@ -121,7 +121,7 @@ $total_lectures = 750;
                                         <li
                                             class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                             <h6 class="mb-0">Semester </h6>
-                                            <span class="text-secondary"><?=$dept['sem']?></span>
+                                            <span class="text-secondary"><?= $dept['sem']?></span>
                                         </li>
                                     </ul>
                                 </div>

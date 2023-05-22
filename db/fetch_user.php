@@ -9,5 +9,3 @@ $dept =  $conn->prepare('SELECT * FROM dept_info WHERE id = :id;');
 $dept->bindParam(':id', $_SESSION['id']);
 $dept->execute();
 $dept = $dept->fetch(PDO::FETCH_ASSOC);
-
-

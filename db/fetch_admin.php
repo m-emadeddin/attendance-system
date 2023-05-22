@@ -34,8 +34,7 @@
             }
         } else {
             // Redirect to an error page or display an error message
-            
-            //after insert or update 
+
             $_SESSION['status'] = "Try again.";
             header("Location: ../login.php");
             exit;

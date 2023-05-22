@@ -6,7 +6,7 @@
       exit();
     }
     else{
-      header("Location: std/std.php");
+      header("Location: std/index.php");
       exit();
     }
   }

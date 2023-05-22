@@ -78,7 +78,7 @@ void loop()
             if (rfid.uid.uidByte[0] != nuidPICC[0] ||
                 rfid.uid.uidByte[1] != nuidPICC[1] ||
                 rfid.uid.uidByte[2] != nuidPICC[2] ||
-                rfid.uid.uidByte[3] != nuidPICC[3])
+                rfid.uid.uidByte[3] != nuidPICC[3] )
             {
                 Serial.println(F("A new card has been detected."));
                 digitalWrite(Y_LED, LOW);
@@ -98,15 +98,15 @@ void loop()
                     hexUID += String(rfid.uid.uidByte[i] < 0x10 ? "0" : "");
                     hexUID += String(rfid.uid.uidByte[i], HEX);
                 }
-                if(hexUID[0] == '5') hexUID = "std_1";
-                else if(hexUID[0] == '9') hexUID = "std_2";
-                else if(hexUID[0] == 'a') hexUID = "std_3";
+                if(hexUID[0] == '5') hexUID = "std_1"; 
+                else if(hexUID[0] == '9') hexUID = "std_2"; 
+                else if(hexUID[0] == 'a') hexUID = "std_3"; 
                 Serial.println(hexUID);
 
                 // Send the data to the server using HTTP GET request
                 WiFiClient client;
                 if (client.connect(serverAddress, serverPort))
-                {
+                {   
                     String url = "/attendance-system/rfid.php?cardID=" + hexUID;
                     client.print(String("GET ") + url + " HTTP/1.1\r\n" +
                                  "Host: " + serverAddress + "\r\n" +

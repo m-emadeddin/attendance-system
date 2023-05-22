@@ -144,7 +144,7 @@ $total_lectures = 750;
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-8">
+                        <!-- <div class="col-lg-8">
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="mb-">Attendance Chart</h4>
@@ -211,11 +211,11 @@ $total_lectures = 750;
                                     </div>
                                 </div>
                             </div>
-                            <!-- /# card -->
+                            /# card -->
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
+                    <div class="row justify-content-left ">
+                        <div class="col-lg-4">
                             <div class="card mt-3">
                                 <ul class="list-group list-group-flush">
                                     <li

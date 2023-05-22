@@ -174,7 +174,7 @@ $total_lectures = 750;
                                                     echo "<td class=\"serial\">" . ($i) . "</td>";
                                                     echo "<td class=\"avatar\">";
                                                     echo "<div class=\"round-img\">";
-                                                    echo '<a href="#"><img id="userImage" class="rounded-circle" src="images/avatar/' . $std['avatar'] . '" alt="" onerror="handleImageError(this);"></a>';
+                                                    echo '<a href="#"><img id="userImage" class="rounded-circle" src="../images/avatar/' . $std['avatar'] . '" alt="" onerror="handleImageError(this);"></a>';
                                                     echo '</div>';
                                                     echo '</td>';
                                                     echo '<td>' . $std['id'] . '</td>';
