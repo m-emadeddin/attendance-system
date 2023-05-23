@@ -20,6 +20,10 @@ Overall, this project offers a convenient and efficient method for students to s
 
 - **Progress Tracking**: Develop a tool for students to track their academic progress, including cumulative grades and attendance records.![WhatsApp Image 2023-05-23 at 19 01 52](https://github.com/AhmedAtef283/attendance-system/assets/90651336/82737577-eaca-486d-820b-554b48203807)
 
+- **Lectures Schedule**: The project allows to student to see the schedule of lectures and see if there is any changes happened.![WhatsApp Image 2023-05-23 at 19 02 54](https://github.com/AhmedAtef283/attendance-system/assets/90651336/764d3592-bf34-4109-9645-226e523ef686)
+
+
+
 
 ## Technologies Used
 
