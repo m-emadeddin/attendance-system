@@ -50,7 +50,7 @@ This project aims to create a web-based platform for attendance submission, grad
 
 ## Contributors
 
-- [@Ahmed Atef]((https://github.com/AhmedAtef283))
+- [@Ahmed Atef](https://github.com/AhmedAtef283)
 - [Muhammed Emadeddine](https://github.com/m-emadeddin)
 - [Kamilia Ahmed](https://github.com/Kamilia98)
 - [Hesham Khaled](https://github.com/HeshamKhaled1)
