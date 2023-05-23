@@ -2,6 +2,12 @@
 
 This project aims to create a web-based platform for attendance submission, grade management, and communication within an educational institution. The system leverages RFID technology, NodeMCU, and a web server to provide a seamless and efficient experience for students and professors.
 
+Each student is assigned a unique RFID card, which they will use to scan their attendance. When a card is scanned, the RFID component reads the card's ID and
+sends it to the NodeMCU. The NodeMCU acts as an intermediary between the RFID component and the web server. It establishes a connection with the web server using Wi-Fi and sends the student's ID to the server.
+
+Simultaneously, an LCD is used to provide feedback to the student. Initially, it displays a welcome message. Upon a successful scan, the LCD displays "Access granted." However, if the card has been previously scanned, it displays "Card scanned previously.
+
+Overall, this project offers a convenient and efficient method for students to submit their attendance using RFID technology. By combining the capabilities of NodeMCU, RFID, and LCD, the system automates the process and provides real-time feedback, simplifying attendance management for educational institutions
 ## Features
 
 - **Attendance Submission**: Students can conveniently submit their attendance using their unique RFID cards. The RFID component reads the card's ID, which is then sent to the server through NodeMCU. Real-time feedback is provided to students via an LCD display.
