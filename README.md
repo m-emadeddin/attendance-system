@@ -49,7 +49,7 @@ This project aims to create a web-based platform for attendance submission, grad
 - **Mobile Application**: Create a mobile application companion for the website, providing convenient access to features and notifications on smartphones and tablets.
 
 ## Contributors
-
+This code was developed by Attendance Seekers:
 - [Ahmed Atef](https://github.com/AhmedAtef283)
 - [Muhammed Emadeddine](https://github.com/m-emadeddin)
 - [Kamilia Ahmed](https://github.com/Kamilia98)
