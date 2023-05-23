@@ -31,6 +31,9 @@ Overall, this project offers a convenient and efficient method for students to s
 
 - **LCD Display**: An LCD display provides real-time feedback to students, displaying messages such as "Access granted" or "Card scanned previously" based on the success of their scan.
 
+## Hardware Connections
+![Picture1](https://github.com/AhmedAtef283/attendance-system/assets/90651336/d4762fc5-10b8-4c79-8e81-d5fd13bfff83)
+
 ## Installation and Setup
 
 1. Clone the project repository from GitHub.
@@ -53,6 +56,13 @@ Overall, this project offers a convenient and efficient method for students to s
 
 
 - **Mobile Application**: Create a mobile application companion for the website, providing convenient access to features and notifications on smartphones and tablets.
+
+## Demo Video
+
+
+https://github.com/AhmedAtef283/attendance-system/assets/90651336/c131a09b-1acb-4460-b230-16ab813c5871
+
+
 
 ## Contributors
 This code was developed by Attendance Seekers:
