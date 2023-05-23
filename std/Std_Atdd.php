@@ -180,7 +180,7 @@ $total_lectures = 750;
                                     </span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                    <h6 class="mb-0">Total Lectures Remaining</h6>
+                                    <h6 class="mb-0">Total Lectures Absence</h6>
                                     <span class="text-secondary">
                                         <?= $total_lectures - $att['score'] ?>
                                     </span>

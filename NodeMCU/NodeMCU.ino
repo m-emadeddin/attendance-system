@@ -3,29 +3,44 @@
 #include <SPI.h>
 #include <MFRC522.h>
 
-const char *ssid = "TP-Link_4912";
-const char *password = "MD@1862001!";
+ #include <Wire.h>           
+ #include <LiquidCrystal_I2C.h>    
+ LiquidCrystal_I2C lcd(0x27,16,2);   
 
-const char *serverAddress = "192.168.1.4";
+
+const char *ssid = "realme 3 Pro";
+const char *password = "00000000";
+
+const char *serverAddress = "192.168.1.3";
 const int serverPort = 80;
 
 #define SS_PIN D4
 #define RST_PIN D3
 
-#define Y_LED D0
-#define R_LED D1
-#define G_LED D2
+//#define Y_LED D0
+//#define R_LED D8
+//#define G_LED 17
 
 MFRC522 rfid(SS_PIN, RST_PIN); // Instance of the class
 MFRC522::MIFARE_Key key;
 byte nuidPICC[4];
 
 void setup()
-{
+{   
+   lcd.begin();      
+   lcd.backlight();  
+
+  // Turn on the backlight.
     Serial.begin(115200);
-    pinMode(Y_LED, OUTPUT);
-    pinMode(G_LED, OUTPUT);
-    pinMode(R_LED, OUTPUT);
+    //pinMode(Y_LED, OUTPUT);
+    //pinMode(G_LED, OUTPUT);
+    //pinMode(R_LED, OUTPUT);
+      lcd.setCursor(0, 0);
+      lcd.print("Welcome Student");
+      lcd.setCursor(0,1);
+      lcd.print("Scan Your ID...");
+
+
 
     WiFi.begin(ssid, password);
     while (WiFi.status() != WL_CONNECTED)
@@ -54,15 +69,15 @@ void setup()
 void loop()
 {
 
-    digitalWrite(Y_LED, HIGH);
-    digitalWrite(G_LED, LOW);
-    digitalWrite(R_LED, LOW);
+    //digitalWrite(Y_LED, HIGH);
+    //digitalWrite(G_LED, LOW);
+    //digitalWrite(R_LED, LOW);
 
     if (rfid.PICC_IsNewCardPresent() && rfid.PICC_ReadCardSerial())
     {
 
-        digitalWrite(R_LED, HIGH);
-        digitalWrite(Y_LED, LOW);
+        //digitalWrite(R_LED, HIGH);
+        //digitalWrite(Y_LED, LOW);
         MFRC522::PICC_Type piccType = rfid.PICC_GetType(rfid.uid.sak);
 
         if (piccType != MFRC522::PICC_TYPE_MIFARE_MINI &&
@@ -81,10 +96,18 @@ void loop()
                 rfid.uid.uidByte[3] != nuidPICC[3] )
             {
                 Serial.println(F("A new card has been detected."));
-                digitalWrite(Y_LED, LOW);
-                digitalWrite(G_LED, LOW);
-                digitalWrite(R_LED, HIGH);
-                delay(200);
+                    lcd.clear();
+                    lcd.setCursor(1, 0);
+                    lcd.print("Access Granted");
+                //digitalWrite(Y_LED, LOW);
+                //digitalWrite(G_LED, LOW);
+                //digitalWrite(R_LED, HIGH);
+                delay(1000);                
+                lcd.clear();
+                lcd.setCursor(0, 0);
+                lcd.print("Welcome Student");
+                lcd.setCursor(0,1);
+                lcd.print("Scan Your ID...");
                 for (byte i = 0; i < 4; i++)
                 {
                     nuidPICC[i] = rfid.uid.uidByte[i];
@@ -101,6 +124,7 @@ void loop()
                 if(hexUID[0] == '5') hexUID = "std_1"; 
                 else if(hexUID[0] == '9') hexUID = "std_2"; 
                 else if(hexUID[0] == 'a') hexUID = "std_3"; 
+                else if(hexUID[0] == '3') hexUID = "std_4";
                 Serial.println(hexUID);
 
                 // Send the data to the server using HTTP GET request
@@ -112,10 +136,11 @@ void loop()
                                  "Host: " + serverAddress + "\r\n" +
                                  "Connection: close\r\n\r\n");
                     Serial.println(F("HTTP GET request sent successfully."));
+
                     delay(1300);
-                    digitalWrite(Y_LED, LOW);
-                    digitalWrite(R_LED, LOW);
-                    digitalWrite(G_LED, HIGH);
+                    //digitalWrite(Y_LED, LOW);
+                    //digitalWrite(R_LED, LOW);
+                    //digitalWrite(G_LED, HIGH);
                     delay(500);
                 }
                 else
@@ -128,12 +153,23 @@ void loop()
             else
             {
                 Serial.println(F("Card read previously."));
-                delay(800);
+                lcd.clear();
+                lcd.setCursor(3, 0);
+                lcd.print("Card read");
+                lcd.setCursor(3, 1);
+                lcd.print("Previously");
+                delay(1000);
+                lcd.clear();
+                lcd.setCursor(0, 0);
+                lcd.print("Welcome Student");
+                lcd.setCursor(0,1);
+                lcd.print("Scan Your ID...");
+
             }
         }
-        digitalWrite(Y_LED, HIGH);
-        digitalWrite(R_LED, LOW);
-        digitalWrite(G_LED, LOW);
+        //digitalWrite(Y_LED, HIGH);
+        //digitalWrite(R_LED, LOW);
+        //digitalWrite(G_LED, LOW);
 
         rfid.PICC_HaltA();
         rfid.PCD_StopCrypto1();
